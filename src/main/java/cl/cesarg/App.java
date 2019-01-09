@@ -12,6 +12,12 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println("\nCasos de prueba");
+        // resolución del primer problema
+        String cadena_prueba = "abacdefgz";
+        System.out.println( "El retorno del primer problema es : " + Resultados.problema_01(cadena_prueba) );
+
+
+
+
     }
 }
