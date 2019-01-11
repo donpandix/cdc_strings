@@ -12,6 +12,7 @@ public class Resultados {
 
     /**
      * Valida caracter único en una cadena
+     *
      * Complejidad O(n)
      * @param entrada
      * @return
@@ -30,6 +31,7 @@ public class Resultados {
 
     /**
      * Valida unicidad del caracter recorriendo el arreglo 2 veces
+     *
      * complejidad O(n^2)
      * @param entrada
      * @return
@@ -48,6 +50,7 @@ public class Resultados {
     /**
      * Verificación de unicidad de caracteres con ordenamiento del arreglo
      * y luego de comparación de caracteres contiguos
+     *
      * Complejidad O(n^2)
      * @param entrada
      * @return
@@ -84,6 +87,7 @@ public class Resultados {
 
     /**
      * Reversa una cadena de n caracteres con un NULL al final
+     *
      * Complejidad O(2n)
      * @param cadena carecteres de entrada
      * @return cadena reversada
@@ -98,7 +102,9 @@ public class Resultados {
 
     /**
      * Resultado implementado con stack se generan más loops
-     * de los necesarios, Complejidad O(2n)
+     * de los necesarios
+     *
+     * Complejidad O(2n)
      * @param cadena
      * @return
      */
@@ -115,6 +121,32 @@ public class Resultados {
     }
 
 
+    /**
+     * Busca los caracteres repetidos y los elimina, solo se ocupan
+     * 2 variables adicionales (posicion y n), no es muy eficiente pero cumple
+     * con lo solicitado en el encabezado
+     *
+     * Complejidad O(n^2)
+     * @param cadena
+     * @return
+     */
+    public static String problema_03_a (String cadena) {
+        if (cadena.length() > 1) {
+            int posicion = 0;
+            while (posicion < cadena.length()) {
+                int n = posicion + 1;
+                while (n < cadena.length()) {
+                    if (cadena.substring(posicion, posicion + 1).equals(cadena.substring(n, n + 1))) {
+                        cadena = cadena.substring(0, n) + cadena.substring(n + 1);
+                    } else {
+                        n++;
+                    }
+                }
+                posicion++;
+            }
+        }
+        return cadena;
+    }
 
 
 

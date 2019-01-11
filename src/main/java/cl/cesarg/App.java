@@ -22,5 +22,7 @@ public class App
         System.out.println( "El retorno del segundo problema (a) (" + cadena_derecho + ") : " + Resultados.problema_02_a(cadena_derecho));
         System.out.println( "El retorno del segundo problema (b) (" + cadena_derecho + ") : " + Resultados.problema_02_b(cadena_derecho));
 
+        String cadena_repetida = "ABCCDDEAECCCCCCCCZZZZZAZZZZ";
+        System.out.println( "El retorno del tercer problema (a) (" + cadena_repetida + ") : " + Resultados.problema_03_a(cadena_repetida));
     }
 }
