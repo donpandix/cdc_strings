@@ -1,5 +1,7 @@
 package cl.cesarg;
 
+import java.util.Stack;
+
 /**
  * Clase que implementa las funciones que solucionan los ejercicios
  * propuestos por este capítulo
@@ -82,12 +84,38 @@ public class Resultados {
 
     /**
      * Reversa una cadena de n caracteres con un NULL al final
+     * Complejidad O(2n)
      * @param cadena carecteres de entrada
      * @return cadena reversada
      */
-    public static String problema_02 ( String[] cadena ) {
-    return null;
+    public static String problema_02_a ( String cadena ) {
+        StringBuilder retorno = new StringBuilder();
+        for (int n=(cadena.length()); n>0; n--) {
+            retorno.append(cadena.substring(n-1, n));
+        }
+        return retorno.toString();
     }
+
+    /**
+     * Resultado implementado con stack se generan más loops
+     * de los necesarios, Complejidad O(2n)
+     * @param cadena
+     * @return
+     */
+    public static String problema_02_b (String cadena) {
+        Stack retorno = new Stack();
+        String respuesta = "";
+        for (int n=0; n<cadena.length(); n++) {
+            retorno.push(cadena.substring(n,n+1));
+        }
+        while (retorno.size() > 0) {
+            respuesta += retorno.pop();
+        }
+        return respuesta;
+    }
+
+
+
 
 
 
